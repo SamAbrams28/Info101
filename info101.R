@@ -24,9 +24,11 @@ read.csv('woa.csv')
 # more columns than column names
 
 # P4 Re-write the call to read.csv() to avoid the error in P3.
-data_frame1 <- read.csv('woa.csv', header = FALSE)
+data_frame1 <- read.csv('woa.csv', skip = 1)
 ?read.csv
 View
+# Skp = 1 instead of header = false because the csv DOES have a header row, it's
+# just the second row instead of the first
 
 # Fix the column names ----------------------------------------------------
 
@@ -74,6 +76,8 @@ wide_mean <- temp_sum/na_sum
 # Analyzing long-format data ----------------------------------------------
 View(woa_long)
 write.csv(woa_long, "woa_long.csv", row.names = FALSE)
+# This is a back-up line - I wrote the data I needed into a file on my computer
+# because the marincs library has been kinda funky.
 
 # P8 Using woa_long, find the mean water temperature globally in the twilight zone.
 long_temp_mean <- mean(woa_long[woa_long$depth_m >= 200 & woa_long$depth_m <= 1000, 4], na.rm = TRUE)

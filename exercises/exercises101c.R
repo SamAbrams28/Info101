@@ -8,7 +8,7 @@ rovs[1, 2]
 
 # Pull out the model column from rovs using both square bracket and dollar sign
 # indexing
-rovs[1,]
+rovs[,1]
 rovs$model
 
 # The file flowcytodata.csv contains artificial flow cytometry data, a technique
